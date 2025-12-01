@@ -1,0 +1,26 @@
+---
+# Source: helm for kubernetes/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hiting-88594ebc
+  labels:
+    app: hiting-88594ebc
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: hiting-88594ebc
+  template:
+    metadata:
+      labels:
+        app: hiting-88594ebc
+    spec:
+      serviceAccountName: ingress-manager
+      containers:
+        - name: hiting-88594ebc
+          image: docker.io/phengbunath/hiting-88594ebc:1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
